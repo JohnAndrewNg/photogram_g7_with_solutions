@@ -15,7 +15,8 @@ class PicturesController < ActionController::Base
 
     @current_count = Photo.count
 
-    render ("pic_templates/create_row.html.erb")
+#    render ("pic_templates/create_row.html.erb")
+    redirect_to("/photos")
   end
 
 #READ
@@ -46,7 +47,8 @@ class PicturesController < ActionController::Base
     p.caption = params["the_caption"]
     p.save
     @my_photo = p
-    render ("pic_templates/update_row.html.erb")
+#    render ("pic_templates/update_row.html.erb")
+    redirect_to("/photos/#{@my_photo.id}")
   end
 
 #DELETE
@@ -54,7 +56,8 @@ class PicturesController < ActionController::Base
     p = Photo.find(params["da_id"])
     p.destroy
     @current_count = Photo.count
-    render ("pic_templates/destroy_row.html.erb")
+#    render ("pic_templates/destroy_row.html.erb")
+    redirect_to("/photos")
   end
 
 
