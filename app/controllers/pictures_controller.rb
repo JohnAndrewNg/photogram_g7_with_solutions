@@ -1,4 +1,4 @@
-class PicturesController < ActionController::Base
+class PicturesController < ApplicationController
   # protect_from_forgery with: :exception
 
 #CREATE
